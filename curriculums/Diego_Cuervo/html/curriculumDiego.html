@@ -1,0 +1,412 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio - Diego cuervo</title>
+    <link rel="stylesheet" href="../../../estilos/estiloInicio.css" />
+    <link
+      rel="shortcut icon"
+      href="../../../imagenes/logoEmpresa.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        color: #333;
+      }
+      header {
+        background-color: #1e90ff;
+        color: white;
+        padding: 1em 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em 2em;
+      }
+      header img {
+        max-height: 100px;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2em;
+      }
+
+      nav {
+        background-color: #a4d2ff;
+        padding: 1em 0;
+        text-align: center;
+      }
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      nav ul li {
+        display: inline;
+        margin: 0 1em;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1em;
+      }
+      nav ul li a:hover {
+        color: #ffeb3b;
+      }
+    
+      #sec_principal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2em 0;
+        background-color: #ffffff;
+      }
+     
+      #sec_principal h2 {
+        font-size: 2.5em;
+        color: #333;
+        margin-bottom: 0.5em;
+      }
+      #sec_principal p {
+        width: 80%;
+        line-height: 1.6em;
+        text-align: justify;
+        margin-bottom: 1em;
+      }  
+     .foto_perfil {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        margin-bottom: 1em;
+        border: 3px solid #1e90ff;
+      }
+      .botones_redes_sociales {
+        display: flex;
+        justify-content: center;
+        gap: 1.5em;
+        margin-top: 1em;
+      }
+
+      .botones_redes_sociales a {
+        text-decoration: none;
+        color: #1e90ff;
+        font-size: 2em;
+      }
+
+      .botones_redes_sociales a:hover {
+        color: #ffeb3b;
+      }
+
+      aside {
+        background-color: #f4f4f9;
+        padding: 1em;
+        margin: 2em 0;
+      }
+
+      aside h3 {
+        text-align: center;
+        color: #1e90ff;
+      }
+
+      aside ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      aside ul li {
+        background-color: white;
+        padding: 1em;
+        margin-bottom: 0.5em;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+      }
+      aside ul li:hover {
+        background-color: #f0f8ff;
+      }
+
+      #sec_secundario {
+        padding: 2em;
+        background-color: #ffffff;
+      }
+
+      #sec_secundario h3 {
+        text-align: center;
+        color: #1e90ff;
+        margin-bottom: 1.5em;
+      }
+
+      #sec_secundario p {
+        text-align: justify;
+        line-height: 1.6em;
+      }
+      footer {
+        background-color: #1e90ff;
+        color: white;
+        text-align: center;
+        padding: 1em 0;
+      }
+
+      footer p {
+        margin: 0.5em 0;
+      }
+    </style>
+  </head>
+  <head>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  .encuesta {
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  }
+  .encuesta h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .encuesta p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .campo {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #cccccc;
+  }
+  .boton {
+    width: 100%;
+    height: 40px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .boton:hover {
+    background-color: #3e8e41;
+  }
+</style>
+</head>
+
+</head>
+  <body>
+    <!-- Barra de Navegación -->
+    <nav>
+      <ul>
+        <li><a class="btn" href="../../inicio.html"> Inicio</a></li>
+        <li><a class="btn" href="#sec_secundario">Experiencia</a></li>
+        <li><a class="btn" href="#sec_funciones">Funciones</a>
+        <li><a class="btn" href="#sec_fortalezas">Fortalezas</a></li>
+        <li><a class="btn" href="#sec_habilidades">Habilidades</a></li>
+        <li><a class="btn" href="#sec_contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <!-- Encabezado con logo y nombre de la empresa -->
+    <header>
+      <img src="../../../imagenes/logoEmpresa.png" alt="logo" class="logoEmpresa" />
+      <h1>JuvenTEC</h1>
+    </header>
+     <!-- Sección Principal: Perfil Profesional -->
+     <section id="sec_principal">
+      <h2>Perfil Profesional</h2>
+      <img src="../img/DiegoCuervo.png" alt="foto de Diego" class="foto_perfil">
+      <p>
+        Soy un gran apasionado por la programación y la tecnología. 
+        Me encanta garantizar que los productos digitales sean fantásticos y brillantes. 
+        Tengo conocimientos básicos en HTML y CSS, y actualmente estoy disfrutando de mi desarrollo como tester de software.
+         ¡Me emociona participar en proyectos colaborativos y asegurar que los desarrollos cumplan con todos los requisitos,
+          para ofrecer una experiencia increíble a los usuarios!
+      </p>
+      <!-- Apartado con lista de últimos proyectos -->
+    <aside>
+      <h3>Últimos Proyectos</h3>
+      <ul>
+        <li>Diseño y Presentación de Encuesta Estadística 
+          sobre hábitos de estudio para estudiantes de grado 11.
+          </li>
+        <li>
+          Desarrollo de Página Web Plana (En Curso).
+        </li>
+        <li>
+          Prototipo de Página Web Personal.
+        </li>
+      </ul>
+    </aside>
+      <!-- Sección Secundaria: Experiencia -->
+    <section id="sec_secundario">
+      <h3>Experiencia</h3>
+      <p>
+        He participado activamente en proyectos académicos y colaborativos,
+         como el desarrollo de una página web plana en el rol de tester,
+          donde diseñé casos de prueba, identifiqué y documenté errores,
+           y aseguré la calidad del producto en colaboración con el equipo; 
+           además, he diseñado y analizado encuestas estadísticas,
+            aplicando herramientas básicas para interpretar datos y presentar resultados, 
+            y desarrollado un prototipo de página web personal utilizando HTML y CSS,
+             explorando principios de diseño responsivo 
+             y funcionalidad para mejorar la experiencia de usuario.
+      </p>
+    </section>
+    <!-- Sección funciones -->
+    <section id="sec_funciones">
+      <aside>
+        <h3>Funciones</h3>
+        <ul>
+          <li>
+        <div class="servicios-card">
+          <div class="card">
+            <div class="face front">
+              <img src="../../../imagenes/imagenDesarrollo.jpeg" alt="" />
+              <h3>Detectar y reportar errores</h3>
+          </div>
+          <div class="face back">
+            <p>
+              Documentación clara y
+              detallada de problemas encontrados, facilitando su
+              solución por parte del equipo de desarrollo.
+            </p>
+            <div class="link"></div>
+          </div>
+        </div>
+
+        <div class="servicios-card">
+          <div class="card">
+            <div class="face front">
+              <img src="../img/evaluarinterfax.jpg" alt="" />
+              <h3>Evaluar la interfaz web</h3>
+          </div>
+          <div class="face back">
+            <p>
+              Revisar el diseño y la
+funcionalidad en navegadores y dispositivos para
+asegurar la compatibilidad y usabilidad.
+            </p>
+            <div class="link"></div>
+          </div>
+        </div>
+
+        <div class="servicios-card">
+          <div class="card">
+            <div class="face front">
+              <img src="../img/stesting.jpg" alt="" />
+              <h3>Ejecutar pruebas manuales</h3>
+          </div>
+          <div class="face back">
+            <p>
+              Realizo verificaciones
+              directas para encontrar errores y evaluar la
+              experiencia del usuario.
+            </p>
+            <div class="link"></div>
+          </div>
+        </div>
+        </ul>
+        <ul><div class="servicios-card">
+          <div class="card">
+            <div class="face front">
+              <img src="../../../imagenes/imagenImplementacion.jpg" alt="" />
+              <h3>Verificar correcciones</h3>
+          </div>
+          <div class="face back">
+            <p>
+              Realizo pruebas de regresión
+para garantizar que las soluciones no generen
+nuevos problemas.
+            </p>
+            <div class="link"></div>
+          </div>
+        </div></ul>
+      </aside></section>
+      <!-- Sección fortaleza --> 
+     <div id="sec_fortalezas"><aside>
+      <h3>Fortalezas</h3>
+      <ul>
+        <li>Analítico y detallista: Habilidad para detectar errores y
+          analizar sistemas a profundidad.
+          </li>
+        <li>
+          Trabajo en equipo: Colaboro eficazmente con
+          desarrolladores y diseñadores para alcanzar objetivos
+          comunes.
+        </li>
+        <li>
+          Aprendizaje continuo: Motivado por adquirir nuevos
+          conocimientos y herramientas en el área de pruebas de
+          software.
+        </li>
+        <li>Adaptabilidad: Capacidad para enfrentar nuevos
+          desafíos y aprender tecnologías rápidamente.</li>
+          <li>Comunicación efectiva: Reporto problemas con claridad
+            y propongo soluciones de manera constructiva.</li>
+      </ul>
+</div>
+
+<div id="sec_habilidades">
+  <h2> Habilidades</h2>
+  <aside>
+    <h3>Habilidades Tecnicas</h3>
+    <ul>
+    <li>Conocimientos básicos en HTML y CSS para
+      pruebas de interfaces web.
+      </li>
+    <li>
+      Uso de navegadores y herramientas de inspección
+para validar interfaces y funcionalidades.
+    </li>
+    <li>
+      Documentación y reporte de errores en
+herramientas colaborativas como Trello .
+    </li>
+    <li>Pruebas manuales básicas.</li>
+  </ul></aside>
+  <aside>
+    <h3>Habilidades Blandas</h3>
+    <ul> <li>Trabajo en equipo.</li>
+    <li>Organización y planificación de tareas.</li>
+  <li>Comunicación efectiva.</li>
+<li>Resolución de problemas y análisis crítico.</li></ul>
+  </aside>
+
+</div>
+      
+     
+
+      <div class="encuesta">
+        <h2> Contacto</h2>
+        <p>Por favor, complete los campos siguientes para enviar su mensaje.</p>
+        <form>
+          <input type="text" class="campo" placeholder="Nombre">
+          <input type="email" class="campo" placeholder="Correo electrónico">
+          <input type="tel" class="campo" placeholder="Número de teléfono">
+          <textarea class="campo" placeholder="Mensaje"></textarea>
+          <button class="boton">Enviar</button>
+        </form>
+      </div>
+
+       <!-- Pie de página con contacto -->
+    <footer>
+      <p>Contacto: +57 3025656996</p>
+      <p>Email: diegocuervo592@gmail.com</p>
+      <p>&copy; 2024 Diego Cuervo. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>

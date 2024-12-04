@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PORTAFOLIO VALENTINA ORTIZ</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      header {
+        background-color: #1e90ff;
+        color: white;
+        padding: 1em 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em 2em;
+      }
+
+      header img {
+        max-height: 80px;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2em;
+      }
+
+      nav {
+        background-color: #1e90ff;
+        padding: 1em 0;
+        text-align: center;
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      nav ul li {
+        display: inline;
+        margin: 0 1em;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1em;
+      }
+
+      nav ul li a:hover {
+        color: #ffeb3b;
+      }
+
+      #sec_principal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2em 0;
+        background-color: #ffffff;
+      }
+
+      #sec_principal h2 {
+        font-size: 2.5em;
+        color: #333;
+        margin-bottom: 0.5em;
+      }
+
+      #sec_principal p {
+        width: 80%;
+        line-height: 1.6em;
+        text-align: justify;
+        margin-bottom: 1em;
+      }
+
+      .foto_perfil {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        margin-bottom: 1em;
+        border: 3px solid #1e90ff;
+      }
+
+      .botones_redes_sociales {
+        display: flex;
+        justify-content: center;
+        gap: 1.5em;
+        margin-top: 1em;
+      }
+
+      .botones_redes_sociales a {
+        text-decoration: none;
+        color: #1e90ff;
+        font-size: 2em;
+      }
+
+      .botones_redes_sociales a:hover {
+        color: #ffeb3b;
+      }
+
+      aside {
+        background-color: #f4f4f9;
+        padding: 1em;
+        margin: 2em 0;
+      }
+
+      aside h3 {
+        text-align: center;
+        color: #1e90ff;
+      }
+
+      aside ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      aside ul li {
+        background-color: white;
+        padding: 1em;
+        margin-bottom: 0.5em;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+      }
+
+      aside ul li:hover {
+        background-color: #f0f8ff;
+      }
+
+      #sec_secundario {
+        padding: 2em;
+        background-color: #ffffff;
+      }
+
+      #sec_secundario h3 {
+        text-align: center;
+        color: #1e90ff;
+        margin-bottom: 1.5em;
+      }
+
+      #sec_secundario p {
+        text-align: justify;
+        line-height: 1.6em;
+      }
+      #sec_tercer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2em 0;
+        background-color: #ffffff;
+      }
+      #sec_tercer h2 {
+        font-size: 2.5em;
+        color: #2c3c97;
+        margin-bottom: 0.5em;
+      }
+
+      #sec_tercer p {
+        width: 80%;
+        line-height: 1.6em;
+        text-align: justify;
+        margin-bottom: 1em;
+      }
+
+      footer {
+        background-color: #1e90ff;
+        color: white;
+        text-align: center;
+        padding: 1em 0;
+      }
+
+      footer p {
+        margin: 0.5em 0;
+      }
+      form {
+        width: 50%;
+        margin: 40px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        height: 40px;
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        height: 40px;
+        background-color: #426aa7;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #27568f;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="../../../imagenes/logoEmpresa.png" alt="foto" />
+      <nav>
+        <ul>
+          <li><a href="#start">Inicio</a></li>
+          <li><a href="#strengths">Fortalezas</a></li>
+          <li><a href="#skills">habilidades</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+      <h1>JuvenTEC</h1>
+    </header>
+    <section id="sec_principal">
+      <h2>FERNANDA ORTIZ</h2>
+      <img
+        src="../img/imagenFernanda.jpg"
+        alt="foto_de_valen"
+        class="foto_de_Perfil"
+        style="width: 200px; height: 300px; border-radius: 15%"
+      />
+
+      <p>
+        Desarrollador web con experiencia en la creación de páginas web
+        estáticas optimizadas y personalizadas. Enfocado en proporcionar
+        soluciones visualmente atractivas, funcionales y alineadas con los
+        objetivos del cliente. Destaco por mi atención al detalle, compromiso
+        con la calidad y capacidad para desarrollar interfaces responsivas y
+        accesibles.
+      </p>
+      <div class="botones_redes_sociales">
+        <a
+          href="https://www.facebook.com/valen.1104?mibextid=ZbWKwL"
+          target="_blank"
+          ><i class="fi fi-brands-facebook"> </i
+        ></a>
+        <a href="https://github.com/nataly-duque" target="_blank"
+          ><i class="aqui se pega"></i
+        ></a>
+        <a href="mailto:nataly.duque@example.com"
+          ><i class="aqui se pega"></i
+        ></a>
+      </div>
+    </section>
+    <aside>
+      <h3>FORTALEZAS</h3>
+      <ul>
+        <li>
+          Creatividad: diseño de interfaces visualmente atractivas y funcionales
+          que cumplen con las necesidades del cliente.
+        </li>
+        <li>
+          Orientación al detalle: desarrollo de estructuras de código claras y
+          bien organizadas.
+        </li>
+        <li>
+          Responsabilidad: cumplimiento de plazos y entrega de resultados de
+          alta calidad.
+        </li>
+        <li>
+          Comunicación: habilidades para colaborar eficazmente con clientes y
+          equipos multidisciplinarios.
+        </li>
+      </ul>
+    </aside>
+    <section id="sec_secundario">
+      <h3>HABILIDADES</h3>
+      <p>
+        lenguajes: HTML5, CSS3, JavaScript (básico/intermedio). Optimización
+        web: estrategias para mejorar la velocidad de carga y la experiencia de
+        usuario. Diseño responsivo: creación de sitios web compatibles con
+        múltiples dispositivos (mobile-first). Control de versiones: manejo de
+        Git y GitHub para el control y colaboración en proyectos. Diseño web:
+        conversión de prototipos y bocetos en páginas funcionales, utilizando
+        herramientas como Figma o Adobe XD. SEO básico: implementación de
+        etiquetas y estructuras HTML para mejorar la visibilidad en motores de
+        búsqueda.
+      </p>
+    </section>
+    <section id="sec_tercer">
+      <h3>FUNCIONES Y EXPERIENCIA LABORAL</h3>
+      <p>
+        Desarrollador Web Freelance [11/04/2023] Crear y diseñar páginas web
+        estáticas adaptadas a las necesidades de clientes en diversos sectores.
+        Implementar diseño responsivo para garantizar una excelente experiencia
+        en dispositivos móviles y de escritorio. Optimizar código y recursos
+        para garantizar tiempos de carga rápidos y mejor rendimiento. Proveer
+        mantenimiento técnico y actualizaciones para proyectos existentes.
+      </p>
+    </section>
+
+    <h2>Formulario de contacto</h2>
+    <form>
+      <label for="nombre">Nombre:</label>
+      <input
+        type="text"
+        name="nombre"
+        placeholder="Ingrese su nombre"
+      /><br /><br />
+      <label for="correo">Correo electrónico:</label>
+      <input
+        type="email"
+        name="correo"
+        placeholder="Ingrese su correo electrónico"
+      /><br /><br />
+      <label for="mensaje">Mensaje:</label>
+      <textarea name="mensaje" placeholder="Ingrese su mensaje"></textarea
+      ><br /><br />
+      <input type="submit" value="Enviar" />
+    </form>
+
+    <footer>
+      <p>Contacto: +57 3507838513</p>
+      <p>Email: vo468418@gmail.com</p>
+      <p>
+        &copy; 2024 Fernanda Valentina Ortiz Perez. Todos los derechos
+        reservados.
+      </p>
+    </footer>
+  </body>
+</html>
