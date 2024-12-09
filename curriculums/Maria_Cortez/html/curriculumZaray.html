@@ -138,7 +138,7 @@
                 contar con el rol de lider de proyectos para la empresa
                 <strong>JuvenTEC</strong>
               </p>
-              <a href="#contactame" class="button button--flex">
+              <a href="#contact" class="button button--flex">
                 Contact<i class="uil uil-message button__icon"></i>
               </a>
             </div>
@@ -375,9 +375,7 @@
               <div class="qualification__data">
                 <div>
                   <h3 class="qualification__title">Lider de Proyectos</h3>
-                  <span class="qualification__subtitle"
-                    >Empresa JuvenTEC</span
-                  >
+                  <span class="qualification__subtitle">Empresa JuvenTEC</span>
                   <div class="qualification__calendar">
                     <i class="uil uil-calendar-alt"></i>
                     2024
@@ -637,7 +635,9 @@
                 El nombre solo debe contener letras.
               </div>
               <div class="contact__contect">
-                <label for="email" class="contact__label">Correo Electrónico</label>
+                <label for="email" class="contact__label"
+                  >Correo Electrónico</label
+                >
                 <input
                   type="email"
                   class="contact__input"
@@ -685,6 +685,7 @@
           <div class="result" id="resultado"></div>
         </div>
       </section>
+      <div id="alertaExito" class="alerta"></div>
     </main>
 
     <!--======FOOTER=======-->
@@ -693,18 +694,31 @@
         <p>Estamos para servir a tu negocio, tus clientes y tus empleados.</p>
       </div>
       <div class="footer-link">
-        <a>Contáctanos</a>
-        <a>Política de Privacidad</a>
-        <a>Terminos y Condiciones</a>
+        <a href="../../../marco_legal/politica_privacidad.html"
+          >Política de Privacidad</a
+        >
+        <a href="../../../marco_legal/terminos_condiciones.html"
+          >Terminos y Condiciones</a
+        >
+        <a href="../../../marco_legal/descargo_responsabilidades.html"
+          >Descargo de Responsabilidades</a
+        >
+        <a href="../../../marco_legal/copyright.html">COPYRIGHT</a>
       </div>
 
       <div class="footer-integrantes">
         <h3>Integrantes del Grupo</h3>
         <a href="../../Maria_Cortez/html/curriculumZaray.html">Zaray Cortez</a>
         <a href="../../Diego_Cuervo/html/curriculumDiego.html">Diego Cuervo</a>
-        <a href="../../Fernanda_Ortiz/html/curriculumFernanda.html">Fernanda Ortiz</a>
-        <a href="../../Sebastian_Omana/html/curriculumSebastian.html">Sebastian Omaña</a>
-        <a href="../../Juliana_Araque/html/curriculumJuliana.html">Juliana Araque</a>
+        <a href="../../Fernanda_Ortiz/html/curriculumFernanda.html"
+          >Fernanda Ortiz</a
+        >
+        <a href="../../Sebastian_Omana/html/curriculumSebastian.html"
+          >Sebastian Omaña</a
+        >
+        <a href="../../Juliana_Araque/html/curriculumJuliana.html"
+          >Juliana Araque</a
+        >
       </div>
       <div class="footer-img">
         <img src="../../../imagenes/logoEmpresa.png" alt="footer" />
@@ -780,13 +794,25 @@
         if (esValido) {
           const resultado = document.getElementById("resultado");
           resultado.innerHTML = `
-                  <h3>Datos enviados:</h3>
-                  <p><strong>Nombre:</strong> ${nombre}</p>
-                  <p><strong>Correo electrónico:</strong> ${email}</p>
-                  <p><strong>Teléfono:</strong> ${telefono}</p>
-                  <p><strong>Mensaje:</strong> ${mensaje}</p>
-              `;
+        <h3>Datos enviados:</h3>
+        <p><strong>Nombre:</strong> ${nombre}</p>
+        <p><strong>Correo electrónico:</strong> ${email}</p>
+        <p><strong>Teléfono:</strong> ${telefono}</p>
+        <p><strong>Mensaje:</strong> ${mensaje}</p>
+    `;
           resultado.style.display = "block";
+
+          // Mostrar la alerta flotante
+          const alertaExito = document.getElementById("alertaExito");
+          alertaExito.textContent =
+            "¡Envío de datos exitoso! Pronto nos cumunicaremos contigo.";
+          alertaExito.style.display = "block";
+
+          // Ocultar la alerta y los datos después de 5 segundos
+          setTimeout(() => {
+            alertaExito.style.display = "none";
+            resultado.style.display = "none";
+          }, 5000);
         }
       }
     </script>

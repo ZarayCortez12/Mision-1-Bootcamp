@@ -179,49 +179,116 @@
       footer p {
         margin: 0.5em 0;
       }
-      form {
-        width: 50%;
-        margin: 40px auto;
+      .contenedor {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
         padding: 20px;
-        border: 1px solid #ccc;
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      /* Título del formulario */
+      h2 {
+        text-align: center;
+        color: #333;
       }
 
+      /* Estilos para el formulario */
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Estilo para las etiquetas de los campos */
       label {
-        display: block;
+        margin: 10px 0 5px 0;
+        font-weight: bold;
+      }
+
+      /* Estilo para los campos de entrada (input, textarea) */
+      input,
+      textarea {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
         margin-bottom: 10px;
       }
 
-      input[type="text"],
-      input[type="email"],
-      textarea {
-        width: 100%;
-        height: 40px;
-        margin-bottom: 20px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-
+      /* Estilo para el botón de enviar */
       input[type="submit"] {
-        width: 100%;
-        height: 40px;
-        background-color: #426aa7;
-        color: #fff;
-        padding: 10px;
+        margin-top: 20px;
+        background-color: #007bff;
+        color: white;
         border: none;
-        border-radius: 5px;
         cursor: pointer;
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 5px;
       }
 
+      /* Efecto hover para el botón de enviar */
       input[type="submit"]:hover {
-        background-color: #27568f;
+        background-color: #0056b3;
       }
 
-      h2 {
-        text-align: center;
-        margin-bottom: 20px;
+      /* Estilos para los mensajes de error */
+      .error {
+        color: red;
+        font-size: 14px;
+        display: none;
+      }
+
+      /* Estilo para el área de resultados */
+      .result {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #e9f7df;
+        border: 1px solid #a0d468;
+        color: #3c763d;
+        display: none;
+      }
+
+      /* Estilo para el mensaje de éxito */
+      .result h4 {
+        font-size: 18px;
+        color: #4caf50;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+
+      .alerta {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 15px 20px;
+        background-color: #4caf50; /* Verde */
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        display: none; /* Oculto inicialmente */
+        z-index: 1000;
+        animation: fadeInOut 4s ease-in-out;
+      }
+
+      @keyframes fadeInOut {
+        0% {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        10% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        90% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
       }
     </style>
   </head>
@@ -316,25 +383,40 @@
       </p>
     </section>
 
-    <h2>Formulario de contacto</h2>
-    <form>
-      <label for="nombre">Nombre:</label>
-      <input
-        type="text"
-        name="nombre"
-        placeholder="Ingrese su nombre"
-      /><br /><br />
-      <label for="correo">Correo electrónico:</label>
-      <input
-        type="email"
-        name="correo"
-        placeholder="Ingrese su correo electrónico"
-      /><br /><br />
-      <label for="mensaje">Mensaje:</label>
-      <textarea name="mensaje" placeholder="Ingrese su mensaje"></textarea
-      ><br /><br />
-      <input type="submit" value="Enviar" />
-    </form>
+    <div class="contenedor">
+      <h2>Formulario de Contacto</h2>
+      <form id="formularioContacto" onsubmit="validarFormulario(event)">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
+        <div id="errorNombre" class="error">
+          El nombre solo debe contener letras.
+        </div>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required />
+        <div id="errorEmail" class="error">
+          Por favor, ingrese un correo electrónico válido.
+        </div>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required />
+        <div id="errorTelefono" class="error">
+          El teléfono debe contener solo números y tener 10 dígitos.
+        </div>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        <div id="errorMensaje" class="error">
+          Por favor, ingrese un mensaje.
+        </div>
+
+        <input type="submit" value="Enviar" />
+      </form>
+
+      <!-- Esta es la única sección de resultado -->
+      <div class="result" id="resultado"></div>
+      <div id="alertaExito" class="alerta"></div>
+    </div>
 
     <footer>
       <p>Contacto: +57 3507838513</p>
@@ -344,5 +426,88 @@
         reservados.
       </p>
     </footer>
+    <script>
+      function validarFormulario(event) {
+        event.preventDefault();
+
+        // Obtener valores
+        var nombre = document.getElementById("nombre").value;
+        var email = document.getElementById("email").value;
+        var telefono = document.getElementById("telefono").value;
+        var mensaje = document.getElementById("mensaje").value;
+
+        console.log("Nombre", nombre);
+        console.log("Email", email);
+        console.log("telefono", telefono);
+        console.log("mensaje", mensaje);
+
+        let esValido = true;
+
+        // Validación del nombre (solo letras)
+        const regexNombre = /^[a-zA-Z\s]+$/; // regex significa expresion regular
+        if (!regexNombre.test(nombre)) {
+          // El método .test() evalúa si el valor de nombre coincide con la expresión regular regexNombre.
+          //.test(nombre) devuelve true (el nombre es válido), entonces !true se convierte en false, por lo que no entraría en el if.
+          document.getElementById("errorNombre").style.display = "block";
+
+          esValido = false;
+          console.log(esValido);
+        } else {
+          document.getElementById("errorNombre").style.display = "none";
+        }
+
+        // Validación del correo (formato adecuado con @)
+        const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        if (!regexEmail.test(email)) {
+          document.getElementById("errorEmail").style.display = "block";
+          esValido = false;
+        } else {
+          document.getElementById("errorEmail").style.display = "none";
+        }
+
+        // Validación del teléfono (solo números y 10 dígitos)
+        const regexTelefono = /^\d{10}$/;
+        if (!regexTelefono.test(telefono)) {
+          document.getElementById("errorTelefono").style.display = "block";
+          esValido = false;
+        } else {
+          document.getElementById("errorTelefono").style.display = "none";
+        }
+
+        // Validación del mensaje (no vacío)
+        if (mensaje.trim() === "") {
+          //trim elimina los espacios en blanco del inicio y final
+          document.getElementById("errorMensaje").style.display = "block";
+          esValido = false;
+        } else {
+          document.getElementById("errorMensaje").style.display = "none";
+        }
+
+        // Si todo es válido, mostrar los datos
+        if (esValido) {
+          const resultado = document.getElementById("resultado");
+          resultado.innerHTML = `
+        <h3>Datos enviados:</h3>
+        <p><strong>Nombre:</strong> ${nombre}</p>
+        <p><strong>Correo electrónico:</strong> ${email}</p>
+        <p><strong>Teléfono:</strong> ${telefono}</p>
+        <p><strong>Mensaje:</strong> ${mensaje}</p>
+    `;
+          resultado.style.display = "block";
+
+          // Mostrar la alerta flotante
+          const alertaExito = document.getElementById("alertaExito");
+          alertaExito.textContent =
+            "¡Envío de datos exitoso! Pronto nos cumunicaremos contigo.";
+          alertaExito.style.display = "block";
+
+          // Ocultar la alerta y los datos después de 5 segundos
+          setTimeout(() => {
+            alertaExito.style.display = "none";
+            resultado.style.display = "none";
+          }, 5000);
+        }
+      }
+    </script>
   </body>
 </html>

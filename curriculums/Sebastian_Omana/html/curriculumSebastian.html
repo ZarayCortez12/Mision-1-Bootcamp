@@ -670,7 +670,7 @@
         <h2 class="section__title">Contactame</h2>
         <span class="section__subtitle">Canales de Comunicación</span>
 
-        <div class="contact_-container container grid">
+        <div class="contact__container container grid">
           <div>
             <div class="contact__information">
               <i class="uil uil-phone contact__icon"></i>
@@ -699,8 +699,75 @@
               </div>
             </div>
           </div>
+          <form
+            action=""
+            class="contact__form grid"
+            onsubmit="validarFormulario(event)"
+          >
+            <div class="contact__inputs grid">
+              <div class="contact__contect">
+                <label for="nombre" class="contact__label">Nombre</label>
+                <input
+                  type="text"
+                  class="contact__input"
+                  id="nombre"
+                  name="nombre"
+                  required
+                />
+              </div>
+              <div id="errorNombre" class="error">
+                El nombre solo debe contener letras.
+              </div>
+              <div class="contact__contect">
+                <label for="email" class="contact__label">Correo Electrónico</label>
+                <input
+                  type="email"
+                  class="contact__input"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
+              <div id="errorEmail" class="error">
+                Por favor, ingrese un correo electrónico válido.
+              </div>
+              <div class="contact__contect">
+                <label for="telefono" class="contact__label">Telefono</label>
+                <input
+                  type="text"
+                  class="contact__input"
+                  id="telefono"
+                  name="telefono"
+                  required
+                />
+              </div>
+              <div id="errorTelefono" class="error">
+                El teléfono debe contener solo números y tener 10 dígitos.
+              </div>
+            </div>
+            <div class="contact__contect">
+              <label for="mensaje" class="contact__label">Mensaje</label>
+              <textarea
+                cols="0"
+                rows="7"
+                class="contact__input"
+                id="mensaje"
+                name="mensaje"
+                required
+              ></textarea>
+            </div>
+            <div id="errorMensaje" class="error">
+              Por favor, ingrese un mensaje.
+            </div>
+
+            <div>
+              <input class="button button--flex" type="submit" value="Enviar" />
+            </div>
+          </form>
+          <div class="result" id="resultado"></div>
         </div>
       </section>
+      <div id="alertaExito" class="alerta"></div>
     </main>
 
     <!--======FOOTER=======-->
@@ -709,9 +776,16 @@
         <p>Estamos para servir a tu negocio, tus clientes y tus empleados.</p>
       </div>
       <div class="footer-link">
-        <a>Contáctanos</a>
-        <a>Política de Privacidad</a>
-        <a>Terminos y Condiciones</a>
+        <a href="../../../marco_legal/politica_privacidad.html"
+          >Política de Privacidad</a
+        >
+        <a href="../../../marco_legal/terminos_condiciones.html"
+          >Terminos y Condiciones</a
+        >
+        <a href="../../../marco_legal/descargo_responsabilidades.html"
+          >Descargo de Responsabilidades</a
+        >
+        <a href="../../../marco_legal/copyright.html">COPYRIGHT</a>
       </div>
 
       <div class="footer-integrantes">
@@ -734,5 +808,89 @@
 
     <!--======MAIN JS=======-->
     <script src="../js/mainWeb.js"></script>
+
+    <script>
+      function validarFormulario(event) {
+        event.preventDefault();
+
+        // Obtener valores
+        var nombre = document.getElementById("nombre").value;
+        var email = document.getElementById("email").value;
+        var telefono = document.getElementById("telefono").value;
+        var mensaje = document.getElementById("mensaje").value;
+
+        console.log("Nombre", nombre);
+        console.log("Email", email);
+        console.log("telefono", telefono);
+        console.log("mensaje", mensaje);
+
+        let esValido = true;
+
+        // Validación del nombre (solo letras)
+        const regexNombre = /^[a-zA-Z\s]+$/; // regex significa expresion regular
+        if (!regexNombre.test(nombre)) {
+          // El método .test() evalúa si el valor de nombre coincide con la expresión regular regexNombre.
+          //.test(nombre) devuelve true (el nombre es válido), entonces !true se convierte en false, por lo que no entraría en el if.
+          document.getElementById("errorNombre").style.display = "block";
+
+          esValido = false;
+          console.log(esValido);
+        } else {
+          document.getElementById("errorNombre").style.display = "none";
+        }
+
+        // Validación del correo (formato adecuado con @)
+        const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        if (!regexEmail.test(email)) {
+          document.getElementById("errorEmail").style.display = "block";
+          esValido = false;
+        } else {
+          document.getElementById("errorEmail").style.display = "none";
+        }
+
+        // Validación del teléfono (solo números y 10 dígitos)
+        const regexTelefono = /^\d{10}$/;
+        if (!regexTelefono.test(telefono)) {
+          document.getElementById("errorTelefono").style.display = "block";
+          esValido = false;
+        } else {
+          document.getElementById("errorTelefono").style.display = "none";
+        }
+
+        // Validación del mensaje (no vacío)
+        if (mensaje.trim() === "") {
+          //trim elimina los espacios en blanco del inicio y final
+          document.getElementById("errorMensaje").style.display = "block";
+          esValido = false;
+        } else {
+          document.getElementById("errorMensaje").style.display = "none";
+        }
+
+        // Si todo es válido, mostrar los datos
+        if (esValido) {
+          const resultado = document.getElementById("resultado");
+          resultado.innerHTML = `
+        <h3>Datos enviados:</h3>
+        <p><strong>Nombre:</strong> ${nombre}</p>
+        <p><strong>Correo electrónico:</strong> ${email}</p>
+        <p><strong>Teléfono:</strong> ${telefono}</p>
+        <p><strong>Mensaje:</strong> ${mensaje}</p>
+    `;
+          resultado.style.display = "block";
+
+          // Mostrar la alerta flotante
+          const alertaExito = document.getElementById("alertaExito");
+          alertaExito.textContent =
+            "¡Envío de datos exitoso! Pronto nos cumunicaremos contigo.";
+          alertaExito.style.display = "block";
+
+          // Ocultar la alerta y los datos después de 5 segundos
+          setTimeout(() => {
+            alertaExito.style.display = "none";
+            resultado.style.display = "none";
+          }, 5000);
+        }
+      }
+    </script>
   </body>
 </html>

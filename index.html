@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JuvenTEC</title>
+    <link rel="stylesheet" href="sss/sss.css" />
     <link rel="stylesheet" href="estilos/estiloInicio.css" />
     <link
       rel="shortcut icon"
@@ -14,23 +15,40 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="sss/sss.js"></script>
+    <script>
+      jQuery(function ($) {
+        $(".slider-testimonial").sss({
+          slideShow: true,
+          speed: 3500,
+        });
+      });
+    </script>
   </head>
   <body>
     <!-- Menu de Navegación -->
     <header class="header">
-      <a href="index.html"
+      <a href="inicio.html"
         ><img src="imagenes/logoEmpresa.png" alt="logo" class="logoEmpresa"
       /></a>
       <nav class="menu_navegacion">
-        <a href="index.html" style="--i: 1" class="active">Inicio</a>
+        <a href="inicio.html" style="--i: 1" class="active">Inicio</a>
         <a href="#nosotros" style="--i: 2">Sobre Nosotros</a>
         <a href="#servicios" style="--i: 3">Servicios</a>
         <a href="#equipo" style="--i: 4">Equipo</a>
       </nav>
+
       <div class="social-media">
+        <button class="btn" id="toggleDarkMode"></button>
         <a href="#" style="--i: 1"><i class="bx bxl-facebook"></i></a>
         <a href="#" style="--i: 2"><i class="bx bxl-instagram"></i></a>
         <a href="#" style="--i: 3"><i class="bx bxl-whatsapp"></i></a>
+        <a href="inicioSesion.html" style="--i: 3"><i class="bx bx-user-circle"></i></a>
       </div>
     </header>
 
@@ -49,7 +67,7 @@
           desarrollo de software hasta soporte técnico integral. ¡Confía en
           nosotros para llevar tu empresa al siguiente nivel!
         </p>
-        <a href="#" class="btn">Conocer Más</a>
+        <a href="#" class="btn_con">Conocer Más</a>
       </div>
 
       <!--Imagen Inicio-->
@@ -61,7 +79,11 @@
       </div>
     </section>
 
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+      class="onda-quienes-somos"
+    >
       <path
         fill="#1743e3"
         fill-opacity="1"
@@ -148,36 +170,44 @@
 
     <section class="section__container">
       <h1>¿Que piensan de nosotros?</h1>
-      <div class="section__grid">
-        <div class="section__card">
-          <h4>¡Un equipo increíble!</h4>
-          <p>
-            Digitalizaron nuestros procesos en tiempo récord con
-            profesionalismo.
-          </p>
-          <img src="imagenes/imagenTestimonio1.jpg" alt="user" />
-          <h5>María Rodríguez</h5>
-          <h6>Gerente General de Innovatech</h6>
-        </div>
-        <div class="section__card">
-          <h4>¡Soluciones prácticas!</h4>
-          <p>
-            Implementaron un sistema en la nube que transformó nuestra
-            productividad.
-          </p>
-          <img src="imagenes/imagenTestimonio2.jpg" alt="user" />
-          <h5>Tanya Grant</h5>
-          <h6>CEO de Construcciones Ávila</h6>
-        </div>
-        <div class="section__card">
-          <h4>El mejor soporte técnico</h4>
-          <p>
-            Implementaron un sistema en la nube que transformó nuestra
-            productividad.
-          </p>
-          <img src="imagenes/imagenTestimonio3.jpeg" alt="user" />
-          <h5>Andrea López</h5>
-          <h6>Directora de Operaciones en Logística Plus</h6>
+      <div class="wrapper">
+        <div class="slider-testimonial">
+          <div class="testimonial-item">
+            <div class="testimonial-client">
+              <img src="./imagenes/imagenTestimonio1.jpg" alt="" />
+              <p class="client-name">María Rodríguez</p>
+            </div>
+            <div class="testimonial-text">
+              <p>
+                ¡Un equipo increíble! Digitalizaron nuestros procesos en tiempo
+                récord con profesionalismo.
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="testimonial-client">
+              <img src="./imagenes/imagenTestimonio2.jpg" alt="" />
+              <p class="client-name">Tanya Grant</p>
+            </div>
+            <div class="testimonial-text">
+              <p>
+                ¡Soluciones prácticas! Implementaron un sistema en la nube que
+                transformó nuestra productividad.
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="testimonial-client">
+              <img src="./imagenes/imagenTestimonio3.jpeg" alt="" />
+              <p class="client-name">Andrea López</p>
+            </div>
+            <div class="testimonial-text">
+              <p>
+                El mejor soporte técnico. Implementaron un sistema en la nube
+                que transformó nuestra productividad.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       <br />
@@ -188,45 +218,62 @@
       <div class="contenedor-personal-trabajo-1">
         <div class="card-personal-trabajo">
           <div class="imgBx">
-            <img src="./curriculums/Diego_Cuervo/img/DiegoCuervo.png" alt="user" />
+            <img
+              src="./curriculums/Diego_Cuervo/img/DiegoCuervo.png"
+              alt="user"
+            />
           </div>
           <div class="text-personal-trabajo">
             <div class="detalles-personal-trabajo">
               <h5>Diego Cuervo</h5>
               <br /><span>Tester Principal</span>
               <div class="actionBtn">
-                <br>
-                <a href="./curriculums/Diego_Cuervo/html/curriculumDiego.html">¡Quiero Conocerlo!</a>
+                <br />
+                <a href="./curriculums/Diego_Cuervo/html/curriculumDiego.html"
+                  >¡Quiero Conocerlo!</a
+                >
               </div>
             </div>
           </div>
         </div>
         <div class="card-personal-trabajo">
           <div class="imgBx">
-            <img src="./curriculums/Fernanda_Ortiz/img/imagenFernanda.jpg" alt="user" />
+            <img
+              src="./curriculums/Fernanda_Ortiz/img/imagenFernanda.jpg"
+              alt="user"
+            />
           </div>
           <div class="text-personal-trabajo">
             <div class="detalles-personal-trabajo">
               <h5>Fernanda Ortiz</h5>
               <br /><span>Desarrolladora Lider</span>
               <div class="actionBtn">
-                <br>
-                <a href="./curriculums/Fernanda_Ortiz/html/curriculumFernanda.html">¡Quiero Conocerlo!</a>
+                <br />
+                <a
+                  href="./curriculums/Fernanda_Ortiz/html/curriculumFernanda.html"
+                  >¡Quiero Conocerlo!</a
+                >
               </div>
             </div>
           </div>
         </div>
         <div class="card-personal-trabajo">
           <div class="imgBx">
-            <img src="./curriculums/Sebastian_Omana/Img/Sebastian_Omana.jpg" alt="user" />
+            <img
+              src="./curriculums/Sebastian_Omana/Img/Sebastian_Omana.jpg"
+              alt="user"
+            />
           </div>
           <div class="text-personal-trabajo">
             <div class="detalles-personal-trabajo">
               <h5>Sebastian Omaña</h5>
               <br /><span>Diseñador Jefe</span>
               <div class="actionBtn">
-                <br>
-                <a href="./curriculums/Sebastian_Omana/html/curriculumSebastian.html">¡Quiero Conocerlo!</a>
+                <br />
+                <a
+                  href="./curriculums/Sebastian_Omana/html/curriculumSebastian.html"
+                  >¡Quiero Conocerlo!</a
+                >
               </div>
             </div>
           </div>
@@ -235,15 +282,21 @@
       <div class="contenedor-personal-trabajo-2">
         <div class="card-personal-trabajo">
           <div class="imgBx">
-            <img src="./curriculums/Juliana_Araque/img/ftoperfil.png" alt="user" />
+            <img
+              src="./curriculums/Juliana_Araque/img/ftoperfil.png"
+              alt="user"
+            />
           </div>
           <div class="text-personal-trabajo">
             <div class="detalles-personal-trabajo">
               <h5>Juliana Araque</h5>
               <br /><span>Desarolladora Lider</span>
               <div class="actionBtn">
-                <br>
-                <a href="./curriculums/Juliana_Araque/html/curriculumJuliana.html">¡Quiero Conocerlo!</a>
+                <br />
+                <a
+                  href="./curriculums/Juliana_Araque/html/curriculumJuliana.html"
+                  >¡Quiero Conocerlo!</a
+                >
               </div>
             </div>
           </div>
@@ -256,10 +309,12 @@
             <div class="detalles-personal-trabajo">
               <h5>Zaray Cortez</h5>
               <br /><span>Lider de Proyectos</span>
-              <br>
+              <br />
               <div class="actionBtn">
-                <br>
-                <a href="./curriculums/Maria_Cortez/html/curriculumZaray.html">¡Quiero Conocerlo!</a>
+                <br />
+                <a href="./curriculums/Maria_Cortez/html/curriculumZaray.html"
+                  >¡Quiero Conocerlo!</a
+                >
               </div>
             </div>
           </div>
@@ -294,22 +349,73 @@
         <p>Estamos para servir a tu negocio, tus clientes y tus empleados.</p>
       </div>
       <div class="footer-link">
-        <a>Contáctanos</a>
-        <a>Política de Privacidad</a>
-        <a>Terminos y Condiciones</a>
+        <a href="./marco_legal/politica_privacidad.html"
+          >Política de Privacidad</a
+        >
+        <a href="./marco_legal/terminos_condiciones.html"
+          >Terminos y Condiciones</a
+        >
+        <a href="./marco_legal/descargo_responsabilidades.html"
+          >Descargo de Responsabilidades</a
+        >
+        <a href="./marco_legal/copyright.html">COPYRIGHT</a>
       </div>
 
       <div class="footer-integrantes">
         <h3>Integrantes del Grupo</h3>
-        <a href="./curriculums/Maria_Cortez/html/curriculumZaray.html">Zaray Cortez</a>
-        <a href="./curriculums/Diego_Cuervo/html/curriculumDiego.html">Diego Cuervo</a>
-        <a href="./curriculums/Fernanda_Ortiz/html/curriculumFernanda.html">Fernanda Ortiz</a>
-        <a href="./curriculums/Sebastian_Omana/html/curriculumSebastian.html">Sebastian Omaña</a>
-        <a href="./curriculums/Juliana_Araque/html/curriculumJuliana.html">Juliana Araque</a>
+        <a href="./curriculums/Maria_Cortez/html/curriculumZaray.html"
+          >Zaray Cortez</a
+        >
+        <a href="./curriculums/Diego_Cuervo/html/curriculumDiego.html"
+          >Diego Cuervo</a
+        >
+        <a href="./curriculums/Fernanda_Ortiz/html/curriculumFernanda.html"
+          >Fernanda Ortiz</a
+        >
+        <a href="./curriculums/Sebastian_Omana/html/curriculumSebastian.html"
+          >Sebastian Omaña</a
+        >
+        <a href="./curriculums/Juliana_Araque/html/curriculumJuliana.html"
+          >Juliana Araque</a
+        >
       </div>
       <div class="footer-img">
         <img src="imagenes/logoEmpresa.png" alt="footer" />
       </div>
     </footer>
+    <script>
+      const toggleButton = document.getElementById("toggleDarkMode");
+      const moonIcon = "<i class='bx bx-moon'></i>";
+      const sunIcon = "<i class='bx bx-sun'></i>";
+
+      toggleButton.innerHTML = moonIcon; // Inicialmente muestra la luna
+
+      toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        document.querySelector(".header").classList.toggle("dark");
+        document.querySelectorAll(".menu_navegacion a").forEach((link) => {
+          link.classList.toggle("dark");
+        });
+        document.querySelectorAll(".social-media a").forEach((link) => {
+          link.classList.toggle("dark");
+        });
+        document
+          .querySelectorAll(".quienes-somos, .servicios")
+          .forEach((section) => {
+            section.classList.toggle("dark");
+          });
+        document.querySelector("footer").classList.toggle("dark");
+        document.querySelectorAll(".section__card").forEach((card) => {
+          card.classList.toggle("dark");
+        });
+
+        // Cambiar el ícono
+        if (document.body.classList.contains("dark")) {
+          toggleButton.innerHTML = sunIcon; // Cambia a sol
+        } else {
+          toggleButton.innerHTML = moonIcon; // Cambia a luna
+        }
+      });
+    </script>
   </body>
 </html>

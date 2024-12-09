@@ -14,6 +14,7 @@
       rel="stylesheet"
     />
     <style>
+      
       body {
         font-family: Arial, sans-serif;
         margin: 0;
@@ -150,69 +151,143 @@
         text-align: justify;
         line-height: 1.6em;
       }
+
       footer {
         background-color: #1e90ff;
         color: white;
         text-align: center;
-        padding: 1em 0;
       }
 
-      footer p {
-        margin: 0.5em 0;
-      }
+  .contenedor {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+  /* Título del formulario */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilos para el formulario */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo para las etiquetas de los campos */
+label {
+    margin: 10px 0 5px 0;
+    font-weight: bold;
+}
+
+/* Estilo para los campos de entrada (input, textarea) */
+input, textarea {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+/* Estilo para el botón de enviar */
+input[type="submit"] {
+    margin-top: 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Efecto hover para el botón de enviar */
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para los mensajes de error */
+.error {
+    color: red;
+    font-size: 14px;
+    display: none;
+}
+
+/* Estilo para el área de resultados */
+.result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e9f7df;
+    border: 1px solid #a0d468;
+    color: #3c763d;
+    display: none;
+}
+
+/* Estilo para el mensaje de éxito */
+.result h4 {
+    font-size: 18px;
+    color: #4CAF50;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Estilos para el área de resultados cuando se muestran los datos */
+.result p {
+    font-size: 16px;
+}
+
+footer {
+    text-align: center;
+    font-size: 14px;
+    width: 1519px;
+    margin-bottom: -31px;
+}
+
+.alerta {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  background-color: #4caf50; /* Verde */
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: none; /* Oculto inicialmente */
+  z-index: 1000;
+  animation: fadeInOut 4s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  10% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  90% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  100% {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+}
     </style>
   </head>
-  <head>
-    <style>
-    body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-  }
-  .encuesta {
-    width: 80%;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-  }
-  .encuesta h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  .encuesta p {
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-  .campo {
-    width: 100%;
-    height: 40px;
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #cccccc;
-  }
-  .boton {
-    width: 100%;
-    height: 40px;
-    background-color: #4CAF50;
-    color: #ffffff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .boton:hover {
-    background-color: #3e8e41;
-  }
-</style>
-</head>
 
-</head>
   <body>
     <!-- Barra de Navegación -->
     <nav>
       <ul>
-        <li><a class="btn" href="../../index.html"> Inicio</a></li>
+        <li><a class="btn" href="../../inicio.html"> Inicio</a></li>
         <li><a class="btn" href="#sec_secundario">Experiencia</a></li>
         <li><a class="btn" href="#sec_funciones">Funciones</a>
         <li><a class="btn" href="#sec_fortalezas">Fortalezas</a></li>
@@ -237,20 +312,20 @@
           para ofrecer una experiencia increíble a los usuarios!
       </p>
       <!-- Apartado con lista de últimos proyectos -->
-    <aside>
-      <h3>Últimos Proyectos</h3>
-      <ul>
-        <li>Diseño y Presentación de Encuesta Estadística 
-          sobre hábitos de estudio para estudiantes de grado 11.
+      <aside>
+        <h3>Últimos Proyectos</h3>
+        <ul>
+          <li>Diseño y Presentación de Encuesta Estadística 
+            sobre hábitos de estudio para estudiantes de grado 11.
+            </li>
+          <li>
+            Desarrollo de Página Web Plana (En Curso).
           </li>
-        <li>
-          Desarrollo de Página Web Plana (En Curso).
-        </li>
-        <li>
-          Prototipo de Página Web Personal.
-        </li>
-      </ul>
-    </aside>
+          <li>
+            Prototipo de Página Web Personal.
+          </li>
+        </ul>
+      </aside>
       <!-- Sección Secundaria: Experiencia -->
     <section id="sec_secundario">
       <h3>Experiencia</h3>
@@ -390,17 +465,32 @@ herramientas colaborativas como Trello .
       
      
 
-      <div class="encuesta">
-        <h2> Contacto</h2>
-        <p>Por favor, complete los campos siguientes para enviar su mensaje.</p>
-        <form>
-          <input type="text" class="campo" placeholder="Nombre">
-          <input type="email" class="campo" placeholder="Correo electrónico">
-          <input type="tel" class="campo" placeholder="Número de teléfono">
-          <textarea class="campo" placeholder="Mensaje"></textarea>
-          <button class="boton">Enviar</button>
-        </form>
-      </div>
+<div class="contenedor">
+  <h2>Formulario de Contacto</h2>
+  <form id="formularioContacto" onsubmit="validarFormulario(event)">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+      <div id="errorNombre" class="error">El nombre solo debe contener letras.</div>
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required>
+      <div id="errorEmail" class="error">Por favor, ingrese un correo electrónico válido.</div>
+
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" required>
+      <div id="errorTelefono" class="error">El teléfono debe contener solo números y tener 10 dígitos.</div>
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+      <div id="errorMensaje" class="error">Por favor, ingrese un mensaje.</div>
+
+      <input type="submit" value="Enviar">
+  </form>
+
+  <!-- Esta es la única sección de resultado -->
+  <div class="result" id="resultado"></div>
+  <div id="alertaExito" class="alerta"></div>
+</div>
 
        <!-- Pie de página con contacto -->
     <footer>
@@ -408,5 +498,88 @@ herramientas colaborativas como Trello .
       <p>Email: diegocuervo592@gmail.com</p>
       <p>&copy; 2024 Diego Cuervo. Todos los derechos reservados.</p>
     </footer>
+    <script>
+      function validarFormulario(event) {
+        event.preventDefault();
+
+        // Obtener valores
+        var nombre = document.getElementById("nombre").value;
+        var email = document.getElementById("email").value;
+        var telefono = document.getElementById("telefono").value;
+        var mensaje = document.getElementById("mensaje").value;
+
+        console.log("Nombre", nombre);
+        console.log("Email", email);
+        console.log("telefono", telefono);
+        console.log("mensaje", mensaje);
+
+        let esValido = true;
+
+        // Validación del nombre (solo letras)
+        const regexNombre = /^[a-zA-Z\s]+$/; // regex significa expresion regular
+        if (!regexNombre.test(nombre)) {
+          // El método .test() evalúa si el valor de nombre coincide con la expresión regular regexNombre.
+          //.test(nombre) devuelve true (el nombre es válido), entonces !true se convierte en false, por lo que no entraría en el if.
+          document.getElementById("errorNombre").style.display = "block";
+
+          esValido = false;
+          console.log(esValido);
+        } else {
+          document.getElementById("errorNombre").style.display = "none";
+        }
+
+        // Validación del correo (formato adecuado con @)
+        const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        if (!regexEmail.test(email)) {
+          document.getElementById("errorEmail").style.display = "block";
+          esValido = false;
+        } else {
+          document.getElementById("errorEmail").style.display = "none";
+        }
+
+        // Validación del teléfono (solo números y 10 dígitos)
+        const regexTelefono = /^\d{10}$/;
+        if (!regexTelefono.test(telefono)) {
+          document.getElementById("errorTelefono").style.display = "block";
+          esValido = false;
+        } else {
+          document.getElementById("errorTelefono").style.display = "none";
+        }
+
+        // Validación del mensaje (no vacío)
+        if (mensaje.trim() === "") {
+          //trim elimina los espacios en blanco del inicio y final
+          document.getElementById("errorMensaje").style.display = "block";
+          esValido = false;
+        } else {
+          document.getElementById("errorMensaje").style.display = "none";
+        }
+
+        // Si todo es válido, mostrar los datos
+        if (esValido) {
+          const resultado = document.getElementById("resultado");
+          resultado.innerHTML = `
+        <h3>Datos enviados:</h3>
+        <p><strong>Nombre:</strong> ${nombre}</p>
+        <p><strong>Correo electrónico:</strong> ${email}</p>
+        <p><strong>Teléfono:</strong> ${telefono}</p>
+        <p><strong>Mensaje:</strong> ${mensaje}</p>
+    `;
+          resultado.style.display = "block";
+
+          // Mostrar la alerta flotante
+          const alertaExito = document.getElementById("alertaExito");
+          alertaExito.textContent =
+            "¡Envío de datos exitoso! Pronto nos cumunicaremos contigo.";
+          alertaExito.style.display = "block";
+
+          // Ocultar la alerta y los datos después de 5 segundos
+          setTimeout(() => {
+            alertaExito.style.display = "none";
+            resultado.style.display = "none";
+          }, 5000);
+        }
+      }
+    </script>
   </body>
 </html>
